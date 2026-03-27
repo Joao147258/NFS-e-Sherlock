@@ -1,7 +1,12 @@
 {
-  "4127700": {
-    "cidade": "Toledo-PR",
-    "provedor": "IPM",
-    "xsd_url": "https://www.toledo.pr.gov.br/nfse/xsd/servico_enviar_lote_rps_envio_v1.xsd"
-  }
+    "4127700": {
+        "cidade": "Toledo-PR",
+        "provedor": "IPM",
+        "xsd_url": "https://www.toledo.pr.gov.br/nfse/xsd/servico_enviar_lote_rps_envio_v1.xsd"
+    },
+    "3554102": {
+        "cidade": "taubate-sp",
+        "provedor": "gissonline",
+        "xsd_url": ""
+    }
 }
