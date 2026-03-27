@@ -8,5 +8,10 @@
         "cidade": "taubate-sp",
         "provedor": "gissonline",
         "xsd_url": ""
+    },
+    "355410": {
+        "cidade": "taubate-sp",
+        "provedor": "sigiss",
+        "xsd_url": ""
     }
 }
