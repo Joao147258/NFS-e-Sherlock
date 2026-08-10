@@ -1,0 +1,407 @@
+/* ============================================
+   NFS-e Sherlock — Estilos principais
+   Visual dark com cards e grid bento
+   ============================================ */
+
+.main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f1e 0%, #0d1326 50%, #0f172a 100%);
+  color: #e2e8f0;
+  padding: 2rem;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* --- Header --- */
+.header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+/* --- Busca --- */
+.searchSection {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.input::placeholder {
+  color: #475569;
+}
+
+.button {
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: inherit;
+}
+
+.button:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+/* --- Dropzone de upload XML --- */
+.dropzoneWrapper {
+  margin-top: 1.5rem;
+}
+
+.dropzone {
+  display: block;
+  padding: 2rem;
+  border: 2px dashed #334155;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.5);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center;
+}
+
+.dropzone:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.fileInput {
+  display: none;
+}
+
+.dropzoneText {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.dropzoneText strong {
+  color: #60a5fa;
+}
+
+/* --- Seção de resultados --- */
+.resultSection {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+.auditorSection {
+  border-top: 1px solid #1e293b;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* --- Estado placeholder / loading --- */
+.placeholderState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #1e293b;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   Bento Grid — layout de cards
+   ============================================ */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* --- Card base --- */
+.card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Variantes de span */
+.cardSpanOne {
+  grid-column: span 1;
+}
+
+.cardSpanTwo {
+  grid-column: span 2;
+}
+
+.cardFullWidth {
+  grid-column: 1 / -1;
+}
+
+/* Variantes de cor */
+.cardMain {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.cardAlertDanger {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.cardAlertWarning {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: rgba(251, 191, 36, 0.06);
+}
+
+.cardAlertSuccess {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.04);
+}
+
+.cardDarkBlue {
+  border-color: #1e293b;
+}
+
+.cardAddress {
+  grid-column: span 2;
+}
+
+.cardPartners {
+  grid-column: span 2;
+}
+
+/* --- Titulos dos cards --- */
+.cardTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.cardBigText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.25rem;
+}
+
+.cardSubText {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+}
+
+.cardNormalText {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* --- Badges --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.statusActive {
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.statusInactive {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* --- Listas --- */
+.taxList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.taxList li {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+}
+
+.taxList li strong {
+  color: #94a3b8;
+}
+
+/* --- CNAE Grid --- */
+.cnaeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cnaeBadge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  font-size: 0.8rem;
+}
+
+/* --- Partners list --- */
+.partnersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.partnersList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #1e293b;
+  font-size: 0.88rem;
+}
+
+.partnersList li:last-child {
+  border-bottom: none;
+}
+
+.partnersList li strong {
+  color: #e2e8f0;
+}
+
+.partnersList li span {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+/* ============================================
+   Responsivo
+   ============================================ */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .inputWrapper {
+    flex-direction: column;
+  }
+
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardSpanOne,
+  .cardSpanTwo,
+  .cardAddress,
+  .cardPartners {
+    grid-column: 1 / -1;
+  }
+
+  .cardFullWidth {
+    grid-column: 1 / -1;
+  }
+}
