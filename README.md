@@ -36,4 +36,5 @@ Ferramenta legada de linha de comando para processamento de layouts de NFS-e.
 
 ## Deploy
 
-O app web esta deployado na Vercel. A CLI Python roda localmente.
+- **Vercel:** [web-six-henna-21.vercel.app](https://web-six-henna-21.vercel.app)
+- **CLI Python:** roda localmente
